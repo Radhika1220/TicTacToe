@@ -10,6 +10,9 @@ namespace TicTacToeProblem
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Welcome to tic tac toe problem!");
+            TicTacToeGame.IntializingCharArray();
+            Console.ReadLine();
         }
     }
 }
