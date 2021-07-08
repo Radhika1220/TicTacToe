@@ -6,16 +6,19 @@ using System.Threading.Tasks;
 
 namespace TicTacToeProblem
 {
-    class Program
+   public class Program
     {
+        public static char[] arr;
+
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to tic tac toe problem!");
-            TicTacToeGame.IntializingCharArray();
+            char[] arr=TicTacToeGame.IntializingCharArray();
             char human = TicTacToeGame.GetHumanInput();
             char computer = TicTacToeGame.GetComputerInput(human);
             Console.WriteLine("Human has chosen {0} and computer has got {1}", human, computer);
-            TicTacToeGame.CreateBoard();
+            TicTacToeGame.DisplayBoard(arr);
+            TicTacToeGame.GetInit(arr,human);
             Console.ReadLine();
         }
     }

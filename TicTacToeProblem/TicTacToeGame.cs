@@ -9,18 +9,17 @@ namespace TicTacToeProblem
     class TicTacToeGame
     {//UC1
         //char human, computer;
-        static char[] arr = new char[10];
         public static char[] IntializingCharArray()
         {
             //Initializing Char Array 
-
+            char[] arr = new char[10];
             for (int i = 0; i < arr.Length; i++)
             {
                 arr[i] = ' ';
             }
             return arr;
         }
-        public static void CreateBoard()
+        public static void DisplayBoard(char[] arr)
         {
             Console.WriteLine("***************************");
 
@@ -53,7 +52,7 @@ namespace TicTacToeProblem
         public static char GetComputerInput(char human)
         {
             char computer;
-            if (human=='X' || human == 'X')
+            if (human == 'X' || human == 'X')
                 computer = 'O';
             else
             {
@@ -61,5 +60,26 @@ namespace TicTacToeProblem
             }
             return computer;
         }
+        public static void GetInit(char[] arr, char human)
+        {
+            while (true)
+            {
+                Console.WriteLine("Enter the position from 1 to 9 :");
+                int pos = Convert.ToInt32(Console.ReadLine());
+                if (arr[pos] != 'X' && arr[pos] != 'O')
+                {
+                    arr[pos] = human;
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Already Ocuupied.Try Different Position!");
+                }
+            }
+
+            TicTacToeGame.DisplayBoard(arr);
+        }
     }
+
 }
+
