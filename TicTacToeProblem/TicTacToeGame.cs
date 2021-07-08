@@ -8,13 +8,20 @@ namespace TicTacToeProblem
 {
     class TicTacToeGame
     {
-      
 
-        public static void IntializingCharArray()
+       static char[] arr = new char[10];
+        public static char[] IntializingCharArray()
         {
             //Initializing Char Array 
-            char[] arr = new char[10] { '0', '0', '0', '0', '0', '0', '0', '0', '0', '0' };
 
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = ' ';
+            }
+            return arr;
+        }
+        public static void CreateBoard()
+        { 
             Console.WriteLine("***************************");
 
             Console.WriteLine("  {0}  |  {1}  |  {2}", arr[1], arr[2], arr[3]);
@@ -33,6 +40,26 @@ namespace TicTacToeProblem
 
             Console.WriteLine("*****************");
 
+        }
+
+
+        public static void GetInput()
+        {
+            char human, computer;
+            Console.WriteLine("Enter the character either X or 0");
+            human = Convert.ToChar(Console.ReadLine());
+            Console.WriteLine("Human got : " + human);
+        
+            if(human=='X' || human=='x')
+            {
+                computer = '0';
+            }
+            else
+            {
+                computer = 'X';
+            }
+            Console.WriteLine("Computer got : " + computer);
+       
         }
 
 
