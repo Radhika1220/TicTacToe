@@ -8,8 +8,8 @@ namespace TicTacToeProblem
 {
     class TicTacToeGame
     {
-
-       static char[] arr = new char[10];
+        //char human, computer;
+        static char[] arr = new char[10];
         public static char[] IntializingCharArray()
         {
             //Initializing Char Array 
@@ -21,7 +21,7 @@ namespace TicTacToeProblem
             return arr;
         }
         public static void CreateBoard()
-        { 
+        {
             Console.WriteLine("***************************");
 
             Console.WriteLine("  {0}  |  {1}  |  {2}", arr[1], arr[2], arr[3]);
@@ -42,28 +42,26 @@ namespace TicTacToeProblem
 
         }
 
-
-        public static void GetInput()
+        //Get 
+        public static char GetHumanInput()
         {
-            char human, computer;
-            Console.WriteLine("Enter the character either X or 0");
+            char human;
+            Console.WriteLine("Enter the character either X or O");
             human = Convert.ToChar(Console.ReadLine());
-            Console.WriteLine("Human got : " + human);
-        
-            if(human=='X' || human=='x')
-            {
-                computer = '0';
-            }
+            return human;
+        }
+        public static char GetComputerInput(char human)
+        {
+            char computer;
+            if (human == 'x' || human == 'X')
+                 computer= 'O';
+               // return (Convert.ToChar(Convert.ToInt32(human)));
             else
             {
                 computer = 'X';
+                //return (Convert.ToChar(Convert.ToInt32(human)));
             }
-            Console.WriteLine("Computer got : " + computer);
-       
+            return computer;
         }
-
-
-
     }
 }
-
