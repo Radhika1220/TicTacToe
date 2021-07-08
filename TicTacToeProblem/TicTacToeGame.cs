@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 namespace TicTacToeProblem
 {
     class TicTacToeGame
-    {//UC1
-        //char human, computer;
+    {
+       //UC1-Initializing Char Array with null
         public static char[] IntializingCharArray()
         {
             //Initializing Char Array 
@@ -19,6 +19,28 @@ namespace TicTacToeProblem
             }
             return arr;
         }
+        //Get player input from user----UC2
+        public static char GetHumanInput()
+        {
+            char human;
+            Console.WriteLine("Enter the character either X or O");
+            human = Convert.ToChar(Console.ReadLine());
+            return human;
+        }
+        //Based on human input,the computer gets the input.
+        public static char GetComputerInput(char human)
+        {
+            char computer;
+            if (human == 'X' || human == 'X')
+                computer = 'O';
+            else
+            {
+                computer = 'X';
+            }
+            return computer;
+        }
+
+        //displaying the tic tac toe board----UC3
         public static void DisplayBoard(char[] arr)
         {
             Console.WriteLine("***************************");
@@ -41,25 +63,8 @@ namespace TicTacToeProblem
 
         }
 
-        //Get 
-        public static char GetHumanInput()
-        {
-            char human;
-            Console.WriteLine("Enter the character either X or O");
-            human = Convert.ToChar(Console.ReadLine());
-            return human;
-        }
-        public static char GetComputerInput(char human)
-        {
-            char computer;
-            if (human == 'X' || human == 'X')
-                computer = 'O';
-            else
-            {
-                computer = 'X';
-            }
-            return computer;
-        }
+
+        //Human got position based on the given index---UC4
         public static void GetInit(char[] arr, char human)
         {
             while (true)
