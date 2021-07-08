@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace TicTacToeProblem
 {
     class TicTacToeGame
-    {
+    {//UC1
         //char human, computer;
         static char[] arr = new char[10];
         public static char[] IntializingCharArray()
@@ -38,7 +38,7 @@ namespace TicTacToeProblem
 
             Console.WriteLine("  {0}  |  {1}  |  {2}", arr[7], arr[8], arr[9]);
 
-            Console.WriteLine("*****************");
+            Console.WriteLine("**********************");
 
         }
 
@@ -53,13 +53,11 @@ namespace TicTacToeProblem
         public static char GetComputerInput(char human)
         {
             char computer;
-            if (human == 'x' || human == 'X')
-                 computer= 'O';
-               // return (Convert.ToChar(Convert.ToInt32(human)));
+            if (human=='X' || human == 'X')
+                computer = 'O';
             else
             {
                 computer = 'X';
-                //return (Convert.ToChar(Convert.ToInt32(human)));
             }
             return computer;
         }
